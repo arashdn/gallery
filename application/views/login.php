@@ -1,7 +1,7 @@
 <div id="container">
 	  <div class="wrapper">
     <form class="form-signin">       
-      
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/.css">
       <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
       <label class="checkbox">
