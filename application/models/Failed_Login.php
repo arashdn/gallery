@@ -18,6 +18,7 @@ class Failed_Login extends CI_Model
     
     public function isIpOk($ip)
     {
+        $this->config->load('login');
         $sql = "SELECT count(*) FROM failedlogin WHERE ip = ?";
         $result = $this->db->query($sql, array($ip));
         

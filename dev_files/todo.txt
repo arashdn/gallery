@@ -2,3 +2,4 @@
 2.add refresh captcha btn
 3.user side verifications
 4.design error div in reg form
+4.design error div in login form

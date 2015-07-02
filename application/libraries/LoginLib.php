@@ -19,6 +19,27 @@ class LoginLib
                 ));
     }
     
+    function addCookie($id,$salt)
+    {
+        $this->ci->config->load('login');
+        $cookie = array(
+            'name'   => $this->ci->config->item('login_cookie_name'),
+            'value'  => $id.'.'.sha1($salt),
+            'expire' => $this->ci->config->item('login_cookie_expire'),
+            );
+
+        $this->ci->input->set_cookie($cookie); 
+    }
+    
+    public function logout() 
+    {
+        $this->ci->config->load('login');
+        $this->ci->session->sess_destroy();
+        $this->ci->load->helper('cookie');
+        delete_cookie($this->ci->config->item('login_cookie_name'));
+
+    }
+    
     function isLoggedIn()
     {
         $login = $this->ci->session->userdata('role');

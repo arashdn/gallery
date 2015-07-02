@@ -99,4 +99,26 @@ class User extends CI_Model
         return 0;
     }
     
+    public function checkLogin($email,$pass)
+    {   
+        $sql = "SELECT * FROM users WHERE email = ? LIMIT 1";
+        $result = $this->db->query($sql, array($email));
+
+        
+        if($result->result_id->num_rows != 1)
+        {
+            return FALSE;
+        }
+        
+        $info = $result->row_array();
+        if($info['pass']==$this->passwordGenerator($pass, $info['salt']))
+        {
+            return $info;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
 }

@@ -9,21 +9,46 @@ class Member extends CI_Controller
 
 		$this->load->view('master_view',array('content' => $content));
 	}
-	public function login()
+	public function login($sts = null)
 	{
-            $this->load->model('Failed_Login');
+            if($this->loginlib->isLoggedIn())
+            {
+                redirect('/');
+                return;
+            }
+            
+            switch ($sts) 
+            {
+                case null:
+                    $sts = '';
+                    break;
+                case 'incorrect':
+                    $sts = 'نام کاربری یا کلمه عبور اشتباه است.';
+                    break;
+                case 'incorrectcaptcha':
+                    $sts = 'کد امنیتی صحیح نیست.';
+                    break;
+                default:
+                    $sts = 'خطایی در ورود رخ داد.';
+                    break;
+            } 
+
+            
+            $this->load->model('failed_login');
             $loginCaptcha = true;
             if($this->failed_login->isIpOk($this->input->ip_address()))
             {
                 $loginCaptcha = false;
             }
             
-            $data = array('showLoginCaptcha'=>$loginCaptcha);
+            $data = array('loginMsg'=>$sts , 'showLoginCaptcha'=>$loginCaptcha);
             
-            $content = $this->load->view('login',$data,true);//NULL->data , true is to load into varible
+            $content = $this->load->view('login',$data,true);
 
             $this->load->view('master_view',array('content' => $content));
 	}
+        
+        
 	public function register()
 	{
             if($this->loginlib->isLoggedIn())
@@ -128,19 +153,51 @@ class Member extends CI_Controller
             
             
             $this->load->model('User');
-            $this->load->model('Failed_Login');
+            $this->load->model('failed_login');
             
             $this->failed_login->clear();
             
             if(!$this->failed_login->isIpOk($this->input->ip_address()))
             {
-                if(!$this->validate_captcha('login'))
-                    redirect ('member/index/incorrectcaptcha');
+                if(!$this->validate_captcha())
+                    redirect ('member/login/incorrectcaptcha');
             }
             
+            $login = $this->User->checkLogin($name,$pass);
+                        
+            if($login)
+            {
+            
+                if($this->input->post('login_rem')!=FALSE)
+                {
+                    $this->loginlib->addCookie($login['id'],$login['salt']);
+                }
+                //print_r($this->input->post());
+                //echo '<pre>'.print_r($login->row_array(),TRUE)."Row Number : ".$login->num_rows;
+                
+                
+               $this->loginlib->addSession($login['id'],$login['username'],$login['role']);
+               echo 'user:'.$login['username'];
+               redirect('/');
+    
+            }
+            
+            else
+            {
+                $this->failed_login->add();
+                redirect('member/login/incorrect');
+            }
            
             
         }
         
+        
+        
+        public function logout() 
+        {
+            $this->loginlib->logout();
+            redirect('/');
+            
+        }
         
 }
