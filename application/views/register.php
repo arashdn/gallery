@@ -1,5 +1,4 @@
 <div id="container">
-<<<<<<< HEAD
     <div class="wrapper">
         <div class="col-sm-3" id="ss">
             <form class="form-signin" method="POST">
