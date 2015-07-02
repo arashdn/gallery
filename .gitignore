@@ -34,3 +34,7 @@ application/logs/*
 
 #Grunt
 /node_modules/
+
+
+tmp/captcha/*
+!tmp/captcha/index.html

@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<title>Gallery</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+        <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.js"></script>
 </head>
 <body>
 	<h1>Header</h1>

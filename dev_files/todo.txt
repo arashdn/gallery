@@ -1,0 +1,4 @@
+1.design captcha filed on register page
+2.add refresh captcha btn
+3.user side verifications
+4.design error div in reg form
