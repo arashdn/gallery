@@ -177,7 +177,7 @@ class Member extends CI_Controller
                 
                 
                $this->loginlib->addSession($login['id'],$login['username'],$login['role']);
-               echo 'user:'.$login['username'];
+               
                redirect('/');
     
             }

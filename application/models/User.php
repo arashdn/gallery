@@ -121,4 +121,21 @@ class User extends CI_Model
         }
         
     }
+    
+    
+    function checkCookie($id,$hashSalt)
+    {
+        $sql = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        $result = $this->db->query($sql, array($id));
+    
+        if($result->result_id->num_rows != 1)
+            return FALSE;
+       
+        
+        $info = $result->row_array();
+        if(sha1($info['salt'])==$hashSalt)
+            return $info;
+        else
+            return false;
+    }
 }

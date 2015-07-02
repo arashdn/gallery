@@ -31,6 +31,44 @@ class LoginLib
         $this->ci->input->set_cookie($cookie); 
     }
     
+    
+    function updateCookie()
+    {
+        $this->ci->config->load('login');
+        $login = $this->ci->session->userdata('role');
+         if($login == false || $login == $this->ci->config->item('unregistered', 'user_role'))
+         {
+             $ck = $this->ci->input->cookie($this->ci->config->item('login_cookie_name'));
+             if($ck)
+             {
+                 $vals = explode('.', $ck);
+                 if(isset($vals[0]) && isset($vals[1]))
+                 {
+                    $this->ci->load->model('User');
+                    $info = $this->ci->User->checkCookie($vals[0],$vals[1]);
+                    if ($info) 
+                    {
+                        //cookie is correct
+                        $this->addSession($info['id'],$info['username'],$info['role']);
+                    } 
+                    else //incorrect coockie
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+             }
+             else //no cookie
+             {
+                return;
+             }
+         }
+    }
+    
+    
     public function logout() 
     {
         $this->ci->config->load('login');
@@ -42,6 +80,7 @@ class LoginLib
     
     function isLoggedIn()
     {
+        $this->updateCookie();
         $login = $this->ci->session->userdata('role');
         if($login == false || $login == $this->ci->config->item('unregistered', 'user_role'))
             return false;
