@@ -22,8 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     
 <body>
-	
-	<?php echo $content; ?>
 
     
 <!-- <nav class="navbar">
@@ -132,6 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</nav>
 	</header>
 
+        <?php echo $content; ?>
 <footer>
     
     <div class="footer navbar-fixed-bottom">
