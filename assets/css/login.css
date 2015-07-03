@@ -4,7 +4,7 @@
 }
 .pack
 {
-    background-image: url('2.JPG');
+    background-image: url('7.gif');
 }
 
 #ss
@@ -32,7 +32,7 @@
     background-color: #1A3F7A;
     color: white;
     margin-right: 50px;
-
+ margin-left: 50px;
     text-align: center;
     display: block;
     width: 80px;
@@ -40,34 +40,27 @@
 }
 .navbar
 {
-    background-color: #71A4F5;
-    height: 70px;
-     
+    background-color:  #1A3F7A;
+    color: white;
 }
 a
 {
+    height: 50px;
+}
+#link
+{
     color: white;
-    font-size: 16px;
-    font-family: BNazanin; 
-    margin-top: 6px;
 }
-.active
+.active a
 {
+    color: black;
     display: block;
-    background-color: #1A3F7A;
-    height: 74px;
-    border-radius:  5px;
-    text-align: center;
-   
 }
-a:hover
+#nav
 {
-    display: block;
-    background-color: #1A3F7A;
-    height: 74px;
-    border-radius:  5px;
-    text-align: center;
-    margin: 0px;
+    margin-top: 10px;
+    height: 70px;
+    font-size: 17px;
 }
 .form-signin
 {
@@ -76,4 +69,12 @@ a:hover
     padding-bottom: 60px;
     border: 4px;
     border-radius: 5px;
+}
+.footer
+{
+    margin-top: 300px;
+    color: white;
+    text-align: center;
+    background-color:  #1A3F7A;
+    height: 30px;
 }
