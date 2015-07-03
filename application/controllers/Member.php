@@ -44,9 +44,10 @@ class Member extends CI_Controller
             
             $data = array('loginMsg'=>$sts , 'showLoginCaptcha'=>$loginCaptcha);
             
-            $content = $this->load->view('login',$data,true);
+            //$content = $this->load->view('login',$data,true);
+            $this->load->view('login',$data);
 
-            $this->load->view('master_view',array('content' => $content));
+            //$this->load->view('master_view',array('content' => $content));
 	}
         
         
@@ -78,9 +79,10 @@ class Member extends CI_Controller
                 
                 if ($this->form_validation->run() == FALSE)
                 {
-                    $content = $this->load->view('register',null,true);//NULL->data , true is to load into varible
+                    //$content = $this->load->view('register',null,true);//NULL->data , true is to load into varible
+                    $content = $this->load->view('register',null);//NULL->data , true is to load into varible
 
-                    $this->load->view('master_view',array('content' => $content));
+                    //$this->load->view('master_view',array('content' => $content));
                 }
                 else
                 {
@@ -103,9 +105,10 @@ class Member extends CI_Controller
             }
             else
             {
-                $content = $this->load->view('register',null,true);//NULL->data , true is to load into varible
+                //$content = $this->load->view('register',null,true);//NULL->data , true is to load into varible
+                $this->load->view('register',null);//NULL->data , true is to load into varible
 
-		$this->load->view('master_view',array('content' => $content));
+		//$this->load->view('master_view',array('content' => $content));
             }
             
             
