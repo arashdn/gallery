@@ -1,17 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Failed_Login extends CI_Model
+class Failed_login extends CI_Model
 {
     public function add()
     {
-        $sql = "insert into failedlogin(time,ip) values(?,?)";
+        $sql = "insert into failedLogin(time,ip) values(?,?)";
         $this->db->query($sql, array(time(),$this->input->ip_address()));
     }
     
     public function clear()
     {
         $this->config->load('login');
-        $sql = "delete from failedlogin where time < ?";
+        $sql = "delete from failedLogin where time < ?";
         $this->db->query($sql, array(time()-$this->config->item('failed_login_timeout')));
     }
     
@@ -19,7 +19,7 @@ class Failed_Login extends CI_Model
     public function isIpOk($ip)
     {
         $this->config->load('login');
-        $sql = "SELECT count(*) FROM failedlogin WHERE ip = ?";
+        $sql = "SELECT count(*) FROM failedLogin WHERE ip = ?";
         $result = $this->db->query($sql, array($ip));
         
         $info =  $result->row_array();

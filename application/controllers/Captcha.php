@@ -25,7 +25,7 @@ class Captcha extends CI_Controller
             $cap = create_captcha($vals);
             
             $this->session->set_userdata(array('captcha'=>$capCode , 'capimg'=>$cap['time'].'.jpg'));
-            
+
             echo $cap['image'];
             
 	}
