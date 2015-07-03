@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     	<header>
 		<!--header code goes here!-->
-		<nav id="nav" class="navbar navbar-default navbar-fixed-top">
+		<nav id="nav" class="navbar">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
