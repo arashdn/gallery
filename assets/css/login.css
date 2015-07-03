@@ -2,9 +2,9 @@
     font-family: 'BNazanin’;
         src:url(‘fonts/BNazanin.ttf’) format(‘truetype’); 
 }
-.container
+.pack
 {
-    background-image: url()
+    background-image: url('2.JPG');
 }
 
 #ss
@@ -31,5 +31,49 @@
 {
     background-color: #1A3F7A;
     color: white;
-    margin-right: 90px;
+    margin-right: 50px;
+
+    text-align: center;
+    display: block;
+    width: 80px;
+
+}
+.navbar
+{
+    background-color: #71A4F5;
+    height: 70px;
+     
+}
+a
+{
+    color: white;
+    font-size: 16px;
+    font-family: BNazanin; 
+    margin-top: 6px;
+}
+.active
+{
+    display: block;
+    background-color: #1A3F7A;
+    height: 74px;
+    border-radius:  5px;
+    text-align: center;
+   
+}
+a:hover
+{
+    display: block;
+    background-color: #1A3F7A;
+    height: 74px;
+    border-radius:  5px;
+    text-align: center;
+    margin: 0px;
+}
+.form-signin
+{
+    background-color: rgba(255,255,255,0.7);
+    padding: 40px;
+    padding-bottom: 60px;
+    border: 4px;
+    border-radius: 5px;
 }
