@@ -87,3 +87,4 @@ define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
 define('CAPTCHA_PATH', 'tmp/captcha/'); 
+define('PIC_UPLOAD_PATH', 'uploads/original/'); 

@@ -2,6 +2,8 @@
     
     <div style="color: red;border: #000 solid  2px;">
         <?php echo validation_errors(); ?>
+        <?php echo isset($upload_error)? $upload_error.'<br>':'' ; ?>
+        <?php echo isset($send_error)? $send_error:'' ; ?>
     </div>
     
     <select name = "category">

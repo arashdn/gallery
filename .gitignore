@@ -38,3 +38,10 @@ application/logs/*
 
 tmp/captcha/*
 !tmp/captcha/index.html
+uploads/*
+!uploads/index.html
+!uploads/.htaccess
+!uploads/original
+uploads/original/*
+!uploads/original/index.html
+!uploads/original/.htaccess
