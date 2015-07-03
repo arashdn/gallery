@@ -1,11 +1,11 @@
 
 
-    
+  <body class="pack">  
 <div id="container">
 	  <div class="wrapper">
           
     
- 
+
 <div class="col-sm-3" id="ss">
     <form class="form-signin" method="post" action="<?php echo site_url('/member/dologin');?>" >  
       <div style="color: red;border: #000 solid  2px;"><?php echo $loginMsg;?></div>
@@ -49,3 +49,4 @@
     
 
 </div>
+</body>

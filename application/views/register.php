@@ -1,3 +1,5 @@
+<body class="pack">
+
 <div id="container">
     <div class="wrapper">
         <div class="col-sm-3" id="ss">
@@ -27,8 +29,12 @@
                     </script>
                 </div>
                 <input type="text" class="form-control" name="captcha" placeholder="capthcha" required="" autofocus="" />
-                <input type="submit" class="btn btn-lg btn-primary btn-block" id="sub" name="submit">
+                
+                <div class="col-sm-5">
+                <input type="submit" class="btn btn-lg btn-primary btn-block" id="sub" name="submit" value="ثبت نام" >
+                </div>
             </form>
         </div>
     </div>
 </div>
+    </body>
