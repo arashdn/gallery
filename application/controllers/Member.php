@@ -35,6 +35,7 @@ class Member extends CI_Controller
 
             
             $this->load->model('failed_login');
+            $this->failed_login->clear();
             $loginCaptcha = true;
             if($this->failed_login->isIpOk($this->input->ip_address()))
             {
@@ -155,7 +156,6 @@ class Member extends CI_Controller
             $this->load->model('User');
             $this->load->model('failed_login');
             
-            $this->failed_login->clear();
             
             if(!$this->failed_login->isIpOk($this->input->ip_address()))
             {
