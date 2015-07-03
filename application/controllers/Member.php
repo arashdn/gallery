@@ -5,9 +5,17 @@ class Member extends CI_Controller
 {
 	public function index()
 	{
-		$content = $this->load->view('home',null,true);//NULL->data , true is to load into varible
-
-		$this->load->view('master_view',array('content' => $content));
+            if(!$this->loginlib->isLoggedIn())
+            {
+                redirect('/member/login');
+                return;
+            }
+            else
+            {
+                redirect('/');
+                return;
+            }
+		
 	}
 	public function login($sts = null)
 	{
