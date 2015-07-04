@@ -53,6 +53,7 @@ a
 }
 .active
 {
+    color: black;
     background-color: white;
 }
 .active a
@@ -97,4 +98,13 @@ a
     width: 60px;
     height: 40px;
     margin: 0;
+}
+#page
+{
+    background-color: #5BBAE3;
+    color: white;
+}
+.pages
+{
+    text-align: center;
 }
