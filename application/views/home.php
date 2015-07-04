@@ -24,7 +24,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading" id="panel-heading">
                         <h4 class="panel-title">
-                            نام فرستنده
+                            <?php echo $value['username']; ?>
                         </h4>
                     </div>
                     <div class="panel-body">

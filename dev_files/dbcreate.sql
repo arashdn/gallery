@@ -10,7 +10,7 @@ create table failedLogin(id int AUTO_INCREMENT , ip nvarchar(50) not null , time
 create table category(id int AUTO_INCREMENT , title nvarchar(255) not null , description text , primary key (id));
 
 
-create table post(id int AUTO_INCREMENT , cat int , title text not null , description text , posttime bigint , primary key (id) , foreign key(cat) references category(id) ON DELETE CASCADE);
+create table post(id int AUTO_INCREMENT , cat int , sender int not null, title text not null , description text , posttime bigint , primary key (id) , foreign key(cat) references category(id) ON DELETE CASCADE , foreign key(sender) references users(id) ON DELETE CASCADE);
 
 create table picture(id int not null AUTO_INCREMENT , post int not null, path text ,filename nvarchar(255) not null , primary key(id) , foreign key(post) references post(id) ON DELETE CASCADE);
 

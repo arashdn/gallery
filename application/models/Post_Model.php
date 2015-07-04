@@ -7,7 +7,7 @@ class Post_Model extends CI_Model
         parent::__construct();
     }
     
-    function addPost($title,$description,$cat,$date=null)
+    function addPost($title,$description,$sender,$cat,$date=null)
     {
         
         if($date == null)
@@ -17,12 +17,13 @@ class Post_Model extends CI_Model
         'title' => $title ,
         'description' => $description,
         'posttime' => $date,
+        'sender' => $sender,
         'cat' => $cat,
         );
 
         if($this->db->insert('post', $data)>0)
         {
-            return $this->db->insert_id();;
+            return $this->db->insert_id();
         }
         return 0;
     }
@@ -32,7 +33,7 @@ class Post_Model extends CI_Model
     private $listSql='';
     function setupPostList()
     {
-        $this->listSql = ' from post';
+        $this->listSql = ' from post,users where post.sender=users.id';
     }
     
     
@@ -52,7 +53,7 @@ class Post_Model extends CI_Model
         
     function getList($start , $limit )
     {
-        $select = 'select id,cat,title,description,posttime ';
+        $select = 'select post.id,post.cat,post.title,post.description,post.posttime,users.username ';
         
         $end = '';
         $end .= ' limit '.$start.' , '.$limit;

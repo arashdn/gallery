@@ -102,8 +102,8 @@ class Member extends CI_Controller
                     if($res>0)
                     {
                         $this->loginlib->addSession($res,$name,$this->User->getRole());
-                        print_r($this->session->userdata());
-                        //redirect ("/");
+                        //print_r($this->session->userdata());
+                        redirect ("/");
                     }
                     else
                     {

@@ -111,9 +111,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 					<ul class="nav navbar-nav">
-						<li class="active"><a  class="navbar navbar-text" id="link"  href="#">پست جدید<span class="sr-only">(current)</span></a></li>
-						<li><a class="navbar navbar-text" id="link" href="#">نام کاربری</a></li>
-						<li><a  class="navbar navbar-text" id="link" href="#">notification</a></li>
+                                                
+						<?php if($this->loginlib->isLoggedIn()) : ?>
+                                                <li><span class="navbar navbar-text" id="link">  خوش آمدید<?php echo '  '.$this->loginlib->getUserName() ?></span></li>
+                                                <li><a  class="navbar navbar-text" id="link"  href="<?php echo site_url('/post/add') ?>">ارسال هنرمندی<span class="sr-only">(current)</span></a></li>
+                                                <li><a  class="navbar navbar-text" id="link"  href="<?php echo site_url('/member/logout') ?>">خروج<span class="sr-only">(current)</span></a></li>
+                                                
+                                                <?php else : ?> 
+                                                <li><a class="navbar navbar-text" id="link" href="<?php echo site_url('/member/login') ?>">ورود</a></li>
+                                                <li><a class="navbar navbar-text" id="link" href="<?php echo site_url('/member/register') ?>">ثبت نام</a></li>
+                                                <?php endif?>
 					</ul>
                     <form action="" class="navbar-form navbar-left" role="search">
                     <div class="form-group">

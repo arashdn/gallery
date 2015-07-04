@@ -59,7 +59,7 @@ class Post extends CI_Controller
                     $disc = $this->input->post('description')?htmlspecialchars($this->input->post('description')):'';
                     $category = $this->input->post('category');
                     $this->load->model('Post_Model');
-                    $res = $this->Post_Model->addPost($sub,$disc,$category);
+                    $res = $this->Post_Model->addPost($sub,$disc,$this->loginlib->getUserId(),$category);
                     
                     if($res <= 0)
                     {

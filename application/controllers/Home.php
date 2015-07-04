@@ -88,7 +88,13 @@ class Home extends CI_Controller
 
         $startInDb = ($page-1)*$pageItem;
         $res = $this->Post_Model->getList($startInDb,$pageItem);
+        
+        if($res == null)
+        {
+            $res=array();
+        }
 
+        
         $this->load->library('JalaliDate');
         $dater = new JalaliDate();
         $this->load->model('Picture');
