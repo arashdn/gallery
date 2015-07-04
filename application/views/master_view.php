@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     	<header>
 		<!--header code goes here!-->
-		<nav id="nav" class="navbar">
+		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -104,6 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					<a class="navbar-brand" href="#">
                     <a id="link" class="navbar-brand" href="#"> گالری  </a>
 
 				</div>
@@ -139,6 +140,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         
         </div>
         </footer>
+    
 
 
     
