@@ -51,10 +51,15 @@ a
 {
     color: white;
 }
+.active
+{
+    background-color: white;
+}
 .active a
 {
     color: black;
     display: block;
+    background-color: white;
 }
 #nav
 {
@@ -77,4 +82,19 @@ a
     text-align: center;
     background-color:  #1A3F7A;
     height: 30px;
+}
+#panel-heading
+{
+    background-color: #5BBAE3;
+}
+#panel-footer
+{
+    background-color: #E6EFF2;
+    padding: 10px;
+}
+#like
+{
+    width: 60px;
+    height: 40px;
+    margin: 0;
 }
