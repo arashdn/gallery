@@ -17,6 +17,7 @@ create table picture(id int not null AUTO_INCREMENT , post int not null, path te
 ALTER DATABASE gallery CHARACTER SET utf8 COLLATE utf8_general_ci;
 ALTER TABLE users CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 ALTER TABLE category CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE post CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
 #------------------------------------------------------------------------

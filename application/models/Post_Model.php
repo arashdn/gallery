@@ -27,4 +27,40 @@ class Post_Model extends CI_Model
         return 0;
     }
     
+    
+    
+    private $listSql='';
+    function setupPostList()
+    {
+        $this->listSql = ' from post';
+    }
+    
+    
+    function getListCount()
+    {
+        $select = 'select count(*) as cnt ';
+        if($this->listSql == '')
+            return null;
+        $result = $this->db->query($select.$this->listSql, null);
+
+        if($result->result_id->num_rows != 1)
+            return null;
+        
+        $info = $result->row_array();
+        return $info['cnt'];
+    }
+        
+    function getList($start , $limit )
+    {
+        $select = 'select id,cat,title,description,posttime ';
+        
+        $end = '';
+        $end .= ' limit '.$start.' , '.$limit;
+        $result = $this->db->query($select.$this->listSql.$end, null);
+        
+        $info = $result->result_array();
+        return $info;
+    }
+    
+    
 }

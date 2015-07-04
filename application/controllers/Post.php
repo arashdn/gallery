@@ -104,4 +104,16 @@ class Post extends CI_Controller
         }
  
     }
+    
+    
+    public function minidisplay($id = null)
+    {
+        if($id == null)
+        {
+            echo 'Nothing to display';
+            return;
+        }
+        
+        $this->load->view('mini_post_display',null);
+    }
 }
