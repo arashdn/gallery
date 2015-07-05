@@ -88,3 +88,9 @@ define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 define('CAPTCHA_PATH', 'tmp/captcha/'); 
 define('PIC_UPLOAD_PATH', 'uploads/original/'); 
+
+
+
+define('LIKE_ERROR', '-10'); 
+define('LIKE_OK', '1'); 
+define('LIKE_NO_LIKE', '2'); 
