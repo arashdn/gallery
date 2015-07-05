@@ -36,7 +36,7 @@
   </label>
     
     
-        <input type="submit" name="submit" class="btn btn-defaultS " >
+    <input type="submit" name="submit" class="btn btn-defaultS " value="ارسال">
       
     </div>
         </div>

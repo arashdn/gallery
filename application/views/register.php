@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <input type="text" id = "email" class="form-control" name="email" placeholder="ایمیل خود را وارد کنید" required="" autofocus="" />
                         <input type="password" id="pass" class="form-control" name="password" placeholder="پسوورد خود را وارد کنید" required=""/>    
-                        <input type="password" id="pass_conf" class="form-control" name="password_conf" placeholder="Password Again" required=""/>   
+                        <input type="password" id="pass_conf" class="form-control" name="password_conf" placeholder="تکرار پسورد" required=""/>   
                         <input id="username" type="text" class="form-control" name="username" placeholder="نام کاربری خود را وارد کنید" required="" autofocus="" />
                         <div class="form-group" id="captcha_display">
                             <script type="text/javascript">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 });
                             </script>
                         </div>
-                        <input type="text" class="form-control" name="captcha" placeholder="capthcha" required="" autofocus="" />
+                        <input type="text" class="form-control" name="captcha" placeholder="حروف تصویر را وارد کنید" required="" autofocus="" />
 
                         <div class="col-sm-5">
                             <input type="submit" class="btn btn-lg btn-primary btn-block" id="sub" name="submit" value="ثبت نام" >
