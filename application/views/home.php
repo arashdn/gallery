@@ -28,20 +28,22 @@
                         </h4>
                     </div>
                     <div class="panel-body">
+                        <a href="#" data-toggle="modal" data-target="#myModal" data-pid="<?php echo $value['id']; ?>">
                         <img width="200" height="200" src="<?php echo $value['picture'];?>"/>
+                        </a>
 
                     </div>
                     <div class="panel-footer" id="panel-footer">
                         <div class="row">
 
                             <div class="col-sm-9 col-md-6 col-xs-6">
-                                <a href="#" data-toggle="modal" data-target="#myModal" data-pid="<?php echo $value['id'];?>"> more details...</a>
+                                <a href="#" data-toggle="modal" data-target="#myModal" data-pid="<?php echo $value['id'];?>"> جزییات بیشتر...</a>
 
                             </div>
-                            <div class="col-sm-3 col-md-6  col-xs-6">
+<!--                            <div class="col-sm-3 col-md-6  col-xs-6">
                                 <button class="btn btn-default" id="like">like </button>
 
-                            </div>
+                            </div>-->
 
                         </div>
 
