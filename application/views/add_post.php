@@ -14,10 +14,11 @@
         }
         ?>
     </select>
-
+<div class="container">
 
     <input type="text" name = "subject" placeholder="subject">
     <textarea type="text" name="description" placeholder="description"></textarea>
     <input type="file" name = "pic" >
     <input type="submit" name="submit">
+    </div>
 </form>
