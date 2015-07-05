@@ -22,7 +22,7 @@
     <?php if ($login) : ?>
         <div class="row"> 
             
-            <button type="button" class="btn btn-default"  id="like_btn"><?php echo $like?' no like':'like';?>
+            <button type="button" class="btn btn-default"  id="like_btn"><?php echo $like?'نمی پسندم':'می پسندم';?>
             </button>
             <span class="badge" id="like_count"><?php echo $likeCount; ?></span>
         </div>  
