@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="#">
-                    <a id="link" class="navbar-brand" href="#"> گالری  </a>
+                    <a id="link" class="navbar-brand" href="<?php echo site_url('/') ?>"> گالری  </a>
 
 				</div>
 
@@ -143,7 +143,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     <div class="footer navbar-fixed-bottom">
     
-    footer
+    هیچ حقوقی محفوظ نیست. برو حالشو ببر
         
         </div>
         </footer>
