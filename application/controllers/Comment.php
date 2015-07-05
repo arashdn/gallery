@@ -9,7 +9,7 @@ class Comment extends CI_Controller
             echo 'not allowed';
 	}
         
-        public function add($post)
+        public function add($post = null)
         {
             if($post == null)
             {
@@ -21,7 +21,21 @@ class Comment extends CI_Controller
                 echo REQ_ERROR;
                 return;
             }
-            
+            if(!$this->input->post('message'))
+            {
+                echo REQ_ERROR;
+                return;
+            }
+            $message = htmlspecialchars($this->input->post('message'));
+
+            $this->load->model('Comment_model');
+            if($this->Comment_model->addComment($message,$post,$this->loginlib->getUserId())>0)
+            {
+                echo REQ_OK;
+                return;
+            }
+            echo REQ_ERROR;
+            return;
         }
 }
         

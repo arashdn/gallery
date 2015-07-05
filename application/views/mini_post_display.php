@@ -27,23 +27,23 @@
             <span class="badge" id="like_count"><?php echo $likeCount; ?></span>
         </div>  
 
-        <div class="row">
+        <div class="row" id="comments">
             <ul class="list-group pull-right col-md-2">
                 <li class="list-group-item">اسم  </li>
             </ul>
 
             <ul class="list-group pull-right col-md-10">
-                <li class="list-group-item">نظر <span class="badge">1</span>  </li>
+                <li class="list-group-item">نظر </li>
             </ul>
 
         </div>
 
         <div class="row">
             <div class="col-md-10 col-sm-10 col-xs-10">
-                <input  type="text" class="form-control navbar-text" placeholder="نظر خود را بنویسید">
+                <input  type="text" class="form-control navbar-text" placeholder="نظر خود را بنویسید" id="comment_msg">
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2">
-                <button  type="button" class="btn btn-primary navbar-btn">ارسال</button>
+                <button  type="button" class="btn btn-primary navbar-btn" id="btn_send">ارسال</button>
             </div>
         </div>
 
@@ -52,7 +52,8 @@
 
 
 <script>
-    $("#like_btn").click(function(e){
+    $("#like_btn").click(function(e)
+    {
     
         e.preventDefault();
         $.ajax(
@@ -76,5 +77,33 @@
                }
     
         });
-}); 
+    }); 
+    
+    
+    $("#btn_send").click(function()
+    {
+        var msg = $("#comment_msg").val();
+           $.ajax(
+           {
+               url: "<?php echo site_url('comment/add/'.$id); ?>", 
+               method: "POST",
+               data: { message: msg },
+               success: function(result)
+               {
+                   if(result == "<?php echo REQ_OK ?>")
+                   {
+                       $("#comments").append('<ul class="list-group pull-right col-md-2"><li class="list-group-item"> <?php echo $this->loginlib->getUserName();  ?> </li></ul><ul class="list-group pull-right col-md-10"><li class="list-group-item">'+msg+'</li></ul>');
+                       $("#comment_msg").val('');
+                   }
+                   else if(result == "<?php echo REQ_ERROR ?>")
+                   {
+                       console.log(result);
+                   }
+               }
+    
+        });
+    });
+    
+    
+    
 </script>
