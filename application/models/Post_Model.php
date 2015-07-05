@@ -57,7 +57,7 @@ class Post_Model extends CI_Model
         
         $end = '';
         $end .= ' limit '.$start.' , '.$limit;
-        $result = $this->db->query($select.$this->listSql.$end, null);
+        $result = $this->db->query($select.$this->listSql.' ORDER BY posttime DESC '.$end, null);
         
         $info = $result->result_array();
         return $info;
