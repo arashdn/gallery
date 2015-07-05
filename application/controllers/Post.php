@@ -134,6 +134,7 @@ class Post extends CI_Controller
         $this->load->library('JalaliDate');
         $dater = new JalaliDate();
         $this->load->model('Picture');
+        $this->load->model('Comment_model');
         $this->config->load('upload');
         
         $dater->setTimeStamp($data['posttime']);
@@ -147,6 +148,10 @@ class Post extends CI_Controller
             return;
         }
         $data['picture'] = base_url().PIC_UPLOAD_PATH.$att[0]['filename'];
+        
+        
+        $cmt = $this->Comment_model->getComments($id);
+        $data['comments'] = $cmt;
         
         if($login)
         {

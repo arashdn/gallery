@@ -31,13 +31,12 @@ class Comment_model extends CI_Model
     
    
         
-    function getList($start , $limit )
+    function getComments($post)
     {
-        $select = 'select post.id,post.cat,post.title,post.description,post.posttime,users.username ';
+        $select = 'select comment.id,comment.message,comment.time,users.username from comment,users where comment.post = ? ';
         
-        $end = '';
-        $end .= ' limit '.$start.' , '.$limit;
-        $result = $this->db->query($select.$this->listSql.$end, null);
+       
+        $result = $this->db->query($select, array($post));
         
         $info = $result->result_array();
         return $info;

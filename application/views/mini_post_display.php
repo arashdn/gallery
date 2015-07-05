@@ -26,15 +26,19 @@
             </button>
             <span class="badge" id="like_count"><?php echo $likeCount; ?></span>
         </div>  
-
+    <br>
         <div class="row" id="comments">
-            <ul class="list-group pull-right col-md-2">
-                <li class="list-group-item">اسم  </li>
-            </ul>
+            
+            <?php foreach ($comments as $value):?>
 
-            <ul class="list-group pull-right col-md-10">
-                <li class="list-group-item">نظر </li>
-            </ul>
+                <ul class="list-group pull-right col-md-2">
+                    <li class="list-group-item"><?php echo $value['username']?></li>
+                </ul>
+
+                <ul class="list-group pull-right col-md-10">
+                    <li class="list-group-item"><?php echo $value['message']?></li>
+                </ul>
+            <?php endforeach; ?>
 
         </div>
 
