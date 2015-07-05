@@ -24,7 +24,12 @@ class Member extends CI_Controller
                 redirect('/');
                 return;
             }
-            
+            $lang = 'fa';
+            if($sts == 'en')
+            {
+                $lang = 'en';
+                $sts=null;
+            }
             switch ($sts) 
             {
                 case null:
@@ -53,7 +58,10 @@ class Member extends CI_Controller
             $data = array('loginMsg'=>$sts , 'showLoginCaptcha'=>$loginCaptcha);
             
             //$content = $this->load->view('login',$data,true);
-            $this->load->view('login',$data);
+            if($lang == 'fa')
+                $this->load->view('login',$data);
+            else
+                $this->load->view('login_en',$data);
 
             //$this->load->view('master_view',array('content' => $content));
 	}

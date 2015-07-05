@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <meta charset="utf-8">
         <title>Gallery</title> 
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-rtl.min.css">
+        <!--<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-rtl.min.css">-->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/login.css">
 
 
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <body class="pack"> 
 
-        <button class="btn btn-lg btn-block" id="sub" type="submit">ثبت نام</button> 
+        <button class="btn btn-lg btn-block" id="sub" type="submit">Register     </button> 
     </div>
 
 
@@ -28,8 +28,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-sm-3  col-lg-3 col-md-3" id="form-group">
                 <form class="form-signin" method="post" action="<?php echo site_url('/member/dologin'); ?>" >  
                     <div style="color: red;border: #000 solid  2px;"><?php echo $loginMsg; ?></div>
-                    <input type="text" class="form-control" name="login_user" placeholder="ایمیل یا نام کاربری" required="" autofocus="" />
-                    <input type="password" class="form-control" name="login_pass" placeholder="پسوورد" required=""/>
+                    <input type="text" class="form-control" name="login_user" placeholder="email" required="" autofocus="" />
+                    <input type="password" class="form-control" name="login_pass" placeholder="Password" required=""/>
                     <?php if ($showLoginCaptcha) : ?>
                         <div class="form-group" id="captcha_display">
                             <script type="text/javascript">
@@ -53,20 +53,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     <?php endif; ?>
                     <label class="checkbox">
-                        <input type="checkbox" value="remember-me" id="rememberMe" name="login_rem">مرا بخاطر بسپار      </label>
+                        <input type="checkbox" value="remember-me" id="rememberMe" name="login_rem">Remmber me</label>
                     <div class="col-sm-5">
-                        <button class="btn btn-lg btn-block" id="sub" type="submit">ورود</button> 
+                        <button class="btn btn-lg btn-block" id="sub" type="submit">Login</button> 
                     </div>
                 </form>
             </div>
-        </div>
+        </div>  
+
     </div>
+
+
+
     <footer>
 
         <div class="footer navbar-fixed-bottom">
 
-            <a href="<?php echo site_url("/member/login/en"); ?>" style="color: white">نسخه انگلیسی</a>
+            <a href="<?php echo site_url("/member/login"); ?>" style="color: white">Persian Site</a>
 
         </div>
     </footer>
+
+
 </body>
