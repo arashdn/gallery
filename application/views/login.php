@@ -15,12 +15,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     </head>
 
-  <body class="pack">  
+  <body class="pack"> 
+      
+            <button class="btn btn-lg btn-block" id="sub" type="submit">ثبت نام</button> 
+            </div>
+      
+      
 <div id="container">
 	  <div class="wrapper">
           
 
-<div class="col-sm-3  col-lg-3 col-md-3" id="ss">
+<div class="col-sm-3  col-lg-3 col-md-3" id="form-group">
     <form class="form-signin" method="post" action="<?php echo site_url('/member/dologin');?>" >  
       <div style="color: red;border: #000 solid  2px;"><?php echo $loginMsg;?></div>
       <input type="text" class="form-control" name="login_user" placeholder="ایمیل یا نام کاربری" required="" autofocus="" />

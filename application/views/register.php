@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="container">
     <div class="wrapper">
-        <div class="col-sm-3" id="ss">
+        <div class="col-sm-3" id="form-group">
             <form class="form-signin" method="POST">
                 <div style="color: red;border: #000 solid  2px;">
                     <?php echo validation_errors(); ?>
