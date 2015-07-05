@@ -6,7 +6,7 @@
             <p>ارسال شده توسط <?php echo $username; ?> در <?php echo $displayDate; ?></p>
             <!--<div class="thumbnail">-->
             <div>
-                <img src="<?php echo $picture; ?>" alt="" width="640" height="480">
+                <img src="<?php echo $picture; ?>" alt="" width="540" height="480">
                 <div class="caption">
                     <h3>توضیحات</h3>
                     <p><?php echo $description; ?></p>

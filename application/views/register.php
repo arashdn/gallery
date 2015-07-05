@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div id="container">
             <div class="wrapper">
-                <div class="col-sm-3" id="ss">
+                <div class="col-sm-3" id="form-group">
                     <form class="form-signin" method="POST">
                         <div style="color: red;border: #000 solid  2px;">
                             <?php echo validation_errors(); ?>
@@ -61,6 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script>
     $("#username").blur(function()
     {
+        console.log('test');
         $("#username").css('border-width','2px');
         if($("#username").val().length < 4)
         {
@@ -80,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     {
         $("#pass").css('border-width','2px');
         $("#pass_conf").css('border-width','2px');
-        var p1 = document.getElementById('pass').;
+        var p1 = document.getElementById('pass');
         var p2 = $("#pass_conf").val();
         console.log("p1="+p1);
         if( p1 == p2)

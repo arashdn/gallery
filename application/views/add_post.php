@@ -8,14 +8,22 @@
         <?php echo isset($send_error)? $send_error:'' ; ?>
     </div>
     
- <div class="col-sm-6  col-lg-6 col-md-3 " style="margin-right:300px; margin-top:60px;">
-<div class="form-group">
+ <div class="col-sm-6  col-lg-9 col-md-7 ">
+    
+<div class="form-group" id="form-group" >
 
   
-    <input type="file" name = "pic" class="form-control" style="padding:8px;">
-
-    <input type="text" name = "subject" placeholder="subject" class="form-control">
+     <input type="text" name = "subject" placeholder="subject" class="form-control" style="margin-bottom:40px;" >
+        <textarea type="text" name="description" placeholder="description" class="form-control" style="margin-bottom:40px;"></textarea>
     
+    <input type="file" name = "pic" class="form-control" style="padding:8px;" style="margin-bottom:40px;">
+
+   
+  
+    <label>
+        نوع دسته :
+ 
+      
        <select name = "category">
         <?php
         foreach ($categories as $key => $value) 
@@ -25,14 +33,10 @@
         ?>
     </select>
 
-    <textarea type="text" name="description" placeholder="description" class="form-control"></textarea>
-    
-    
-    
-    
-        <input type="submit" name="submit" class="btn btn-defaultS ">
+        <input type="submit" name="submit" class="btn btn-defaultS " >
     
     </div>
+       </label>
 </form>
     </div>
     </div>
