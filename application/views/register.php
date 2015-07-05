@@ -22,11 +22,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="container">
             <div class="wrapper">
                 <div class="col-sm-3" id="form-group">
-                    <form class="form-signin" method="POST">
+                    <form class="form-signin" method="POST" id="reg_form">
                         <div style="color: red;border: #000 solid  2px;">
                             <?php echo validation_errors(); ?>
                         </div>
-                        <input type="text" class="form-control" name="email" placeholder="ایمیل خود را وارد کنید" required="" autofocus="" />
+                        <input type="text" id = "email" class="form-control" name="email" placeholder="ایمیل خود را وارد کنید" required="" autofocus="" />
                         <input type="password" id="pass" class="form-control" name="password" placeholder="پسوورد خود را وارد کنید" required=""/>    
                         <input type="password" id="pass_conf" class="form-control" name="password_conf" placeholder="Password Again" required=""/>   
                         <input id="username" type="text" class="form-control" name="username" placeholder="نام کاربری خود را وارد کنید" required="" autofocus="" />
@@ -61,7 +61,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script>
     $("#username").blur(function()
     {
-        console.log('test');
         $("#username").css('border-width','2px');
         if($("#username").val().length < 4)
         {
@@ -74,17 +73,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
     });
     
-    $("#pass").blur(matchPassword());
-    $("#pass_conf").blur(matchPassword());
-    
-    function matchPassword()
+    $("#pass").blur(function ()
     {
         $("#pass").css('border-width','2px');
         $("#pass_conf").css('border-width','2px');
-        var p1 = document.getElementById('pass');
+        var p1 = $("#pass").val()
         var p2 = $("#pass_conf").val();
-        console.log("p1="+p1);
-        if( p1 == p2)
+        if( p1 == p2 && p1 != "")
         {
             
             $("#pass").css('border-color','green');
@@ -95,7 +90,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $("#pass").css('border-color','red');
             $("#pass_conf").css('border-color','red');
         }
-    }
+    });
+    $("#pass_conf").blur(function ()
+    {
+        $("#pass").css('border-width','2px');
+        $("#pass_conf").css('border-width','2px');
+        var p1 = $("#pass").val()
+        var p2 = $("#pass_conf").val();
+        if( p1 == p2 && p1 != "")
+        {
+            
+            $("#pass").css('border-color','green');
+            $("#pass_conf").css('border-color','green');
+        }
+        else
+        {
+            $("#pass").css('border-color','red');
+            $("#pass_conf").css('border-color','red');
+        }
+    });
+    
+    
+    
+    function validateEmail(email) 
+    { 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    } 
+    
+    $("#email").blur(function()
+    {
+        $("#email").css('border-width','2px');
+        if(validateEmail($("#email").val()))
+        {
+            $("#email").css('border-color','green');
+        }
+        else
+        {
+            $("#email").css('border-color','red');
+        }
+    });
+    
     
     </script>
     
