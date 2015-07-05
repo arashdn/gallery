@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <body class="pack"> 
 
-        <button class="btn btn-lg btn-block" id="sub" type="submit">ثبت نام</button> 
+        <a href="<?php echo site_url("/member/register"); ?>"><button class="btn btn-lg btn-block" id="sub">ثبت نام</button> </a>
     </div>
 
 
