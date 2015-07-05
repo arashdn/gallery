@@ -64,4 +64,17 @@ class Post_Model extends CI_Model
     }
     
     
+    
+    function getPostInfo($id)
+    {
+
+        $select = 'select post.id,post.cat,post.title,post.description,post.posttime,users.username  from post,users where post.sender=users.id and post.id = ? limit 1';
+
+        $result = $this->db->query($select,array($id));
+        
+        $info = $result->result_array();
+        return $info;
+    
+    }
+    
 }

@@ -97,6 +97,7 @@
     
 $("#myModal").on("show.bs.modal", function(e) {
     var id = e.relatedTarget.dataset.pid;
+    console.log(id);
     $(this).find(".modal-body").load("<?php echo site_url('post/minidisplay') ?>/"+id);
 });
 

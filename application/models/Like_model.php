@@ -30,4 +30,13 @@ class Like_model extends CI_Model
         return false;
     }
     
+    public function getLikeCount($post)
+    {
+        $sql = "SELECT count(*) FROM likes where post = ?";
+        $result = $this->db->query($sql, array($post));
+        
+        $info =  $result->row_array();
+        return $info['count(*)'];
+    }
+    
 }

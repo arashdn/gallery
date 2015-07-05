@@ -114,6 +114,48 @@ class Post extends CI_Controller
             return;
         }
         
-        $this->load->view('mini_post_display',null);
+        $login = $this->loginlib->isLoggedIn();
+
+        
+        $this->load->model('Post_Model');
+
+        $res = $this->Post_Model->getPostInfo($id);
+        if(!isset($res[0]))
+        {
+            echo 'Nothing to display';
+            return;
+        }
+        
+        $data = $res[0];
+        $data['login'] = $login;
+        
+        
+        
+        $this->load->library('JalaliDate');
+        $dater = new JalaliDate();
+        $this->load->model('Picture');
+        $this->config->load('upload');
+        
+        $dater->setTimeStamp($data['posttime']);
+        $data['displayDate'] = $dater->getListDate();
+
+
+        $att = $this->Picture->getPostPicture($data['id']);
+        if(!$att)
+        {
+            show_error('خطا در بارگزاری اطلاعات فایل های پیوستی', '500', 'خطا');
+            return;
+        }
+        $data['picture'] = base_url().PIC_UPLOAD_PATH.$att[0]['filename'];
+        
+        if($login)
+        {
+            $this->load->model('Like_model');
+            $user = $this->loginlib->getUserId();
+            $data['like'] = $this->Like_model->userLikedPost($id,$user);
+            $data['likeCount'] = $this->Like_model->getLikeCount($id);
+        }
+        
+        $this->load->view('mini_post_display',$data);
     }
 }

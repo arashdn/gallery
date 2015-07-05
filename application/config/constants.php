@@ -94,3 +94,7 @@ define('PIC_UPLOAD_PATH', 'uploads/original/');
 define('LIKE_ERROR', '-10'); 
 define('LIKE_OK', '1'); 
 define('LIKE_NO_LIKE', '2'); 
+
+
+define('REQ_ERROR', '0'); 
+define('REQ_OK', '1'); 

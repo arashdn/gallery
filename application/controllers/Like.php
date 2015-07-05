@@ -40,22 +40,4 @@ class Like extends CI_Controller
                 }
             }
         }
-        
-        function test($post = null)
-        {
-            if($post == null)
-            {
-                echo LIKE_ERROR;
-                return;
-            }
-            if(!$this->loginlib->isLoggedIn())
-            {
-                echo LIKE_ERROR;
-                return;
-            }
-            
-            $content = $this->load->view('test_view',null,true);//NULL->data , true is to load into varible
-        
-            $this->load->view('master_view',array('content' => $content));
-        }
 }
