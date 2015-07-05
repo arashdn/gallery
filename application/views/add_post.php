@@ -1,6 +1,7 @@
 
-<div class="container">
-<form method="post" enctype="multipart/form-data" class="form-horizontal">
+<div class="container"id="addpost" >
+    
+<form method="post" enctype="multipart/form-data" class="form-horizontal" >
     
     <div style="color: red;border: #000 solid  2px;">
         <?php echo validation_errors(); ?>
@@ -11,10 +12,10 @@
  <div class="col-sm-6  col-lg-9 col-md-7 ">
     
 <div class="form-group" id="form-group" >
-
+<div id="sendform" >
   
-     <input type="text" name = "subject" placeholder="subject" class="form-control" style="margin-bottom:40px;" >
-        <textarea type="text" name="description" placeholder="description" class="form-control" style="margin-bottom:40px;"></textarea>
+     <input type="text" name = "subject" placeholder="موضوع" class="form-control" style="margin-bottom:40px;" >
+        <textarea type="text" name="description" placeholder="توضیحات" class="form-control" style="margin-bottom:40px;"></textarea>
     
     <input type="file" name = "pic" class="form-control" style="padding:8px;" style="margin-bottom:40px;">
 
@@ -32,11 +33,15 @@
         }
         ?>
     </select>
-
-        <input type="submit" name="submit" class="btn btn-defaultS " >
+  </label>
     
+    
+        <input type="submit" name="submit" class="btn btn-defaultS " >
+      
     </div>
-       </label>
+        </div>
+    </div>
+       
 </form>
-    </div>
+
     </div>
