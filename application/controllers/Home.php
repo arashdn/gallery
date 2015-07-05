@@ -8,11 +8,11 @@ class Home extends CI_Controller
     {  
 
 
-        $this->load->model('Post_Model');
+        $this->load->model('Post_model');
 
-        $this->Post_Model->setupPostList();
+        $this->Post_model->setupPostList();
 
-        $num = $this->Post_Model->getListCount();
+        $num = $this->Post_model->getListCount();
         if($num==null)
         {
             show_error('خطای نامعلومی رخ داد');
@@ -81,7 +81,7 @@ class Home extends CI_Controller
 
 
         $startInDb = ($page-1)*$pageItem;
-        $res = $this->Post_Model->getList($startInDb,$pageItem);
+        $res = $this->Post_model->getList($startInDb,$pageItem);
         
         if($res == null)
         {
