@@ -4,10 +4,11 @@ Site Language is Persian (There are not a lot of words in the site , they can be
 
 
 ###features:
-- login and register
-- image upload and image list
+- Category for images
+- Login and Registeration
+- Image upload and image list
 - Liking images
-- comments
+- Comments
 - etc
 
 
