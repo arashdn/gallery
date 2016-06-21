@@ -1,5 +1,6 @@
 # gallery
 My University project , A Very simple image sharing system using codeigniter.
+Site Language is Persian (There are not a lot of words in the site , they can be changed easily.
 
 
 ###features:
